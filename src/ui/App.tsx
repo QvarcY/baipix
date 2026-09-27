@@ -22,7 +22,7 @@ import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useNotices } from './hooks/useNotices';
 import { LeftPanel } from './panels/LeftPanel';
 import { RightPanel } from './panels/RightPanel';
-import { PANEL_LIMITS, toast, uiStore, type UiState } from './uiStore';
+import { openDialog, PANEL_LIMITS, toast, uiStore, type UiState } from './uiStore';
 
 const editorLabels = () => ({
   layer: (n: number) => t('default.layer', { n }),
@@ -82,7 +82,7 @@ function useRestore(editor: Editor, storage: StorageAdapter): boolean {
 }
 
 export function App({ editor, storage }: { editor: Editor; storage: StorageAdapter }) {
-  useT();
+  const translate = useT();
   const actions = useMemo(() => createActions(editor), [editor]);
   const ready = useRestore(editor, storage);
   const { uiHidden, sheet, panelWidths } = uiStore.use((s) => s);
@@ -107,6 +107,16 @@ export function App({ editor, storage }: { editor: Editor; storage: StorageAdapt
             <PanelResizer side="right" />
             <MobileBar />
             <Coordinates />
+            <button
+              type="button"
+              className="icon-btn large shortcuts-help-button"
+              aria-label={translate('menu.shortcuts')}
+              data-tip={translate('menu.shortcuts')}
+              data-kbd="?"
+              onClick={() => openDialog({ type: 'shortcuts' })}
+            >
+              <span aria-hidden="true">?</span>
+            </button>
             <Toolbar />
           </main>
           <RightPanel />
