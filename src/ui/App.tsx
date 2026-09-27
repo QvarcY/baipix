@@ -9,6 +9,7 @@ import { CanvasView } from './components/CanvasView';
 import { ColorPicker } from './components/ColorPicker';
 import { ColorAdjustPanel } from './components/ColorAdjustPanel';
 import { Coordinates } from './components/Coordinates';
+import { IconButton } from './components/IconButton';
 import { MenuHost } from './components/Menu';
 import { MobileBar } from './components/MobileBar';
 import { PanelResizer } from './components/PanelResizer';
@@ -82,7 +83,7 @@ function useRestore(editor: Editor, storage: StorageAdapter): boolean {
 }
 
 export function App({ editor, storage }: { editor: Editor; storage: StorageAdapter }) {
-  const translate = useT();
+  useT();
   const actions = useMemo(() => createActions(editor), [editor]);
   const ready = useRestore(editor, storage);
   const { uiHidden, sheet, panelWidths } = uiStore.use((s) => s);
@@ -107,16 +108,14 @@ export function App({ editor, storage }: { editor: Editor; storage: StorageAdapt
             <PanelResizer side="right" />
             <MobileBar />
             <Coordinates />
-            <button
-              type="button"
+            <IconButton
               className="icon-btn large shortcuts-help-button"
-              aria-label={translate('menu.shortcuts')}
-              data-tip={translate('menu.shortcuts')}
-              data-kbd="?"
+              icon="help"
+              iconSize={20}
+              label={t('menu.shortcuts')}
+              shortcut="?"
               onClick={() => openDialog({ type: 'shortcuts' })}
-            >
-              <span aria-hidden="true">?</span>
-            </button>
+            />
             <Toolbar />
           </main>
           <RightPanel />

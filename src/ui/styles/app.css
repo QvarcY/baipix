@@ -751,9 +751,6 @@ body.is-dragging-layer * {
   z-index: 6;
   background: var(--panel);
   box-shadow: var(--shadow);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
 }
 
 .coordinates i {
