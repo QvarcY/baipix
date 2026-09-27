@@ -91,7 +91,8 @@ body.is-resizing * {
 .app.ui-hidden .panel,
 .app.ui-hidden .toolbar,
 .app.ui-hidden .coordinates,
-.app.ui-hidden .resizer {
+.app.ui-hidden .resizer,
+.app.ui-hidden .shortcuts-help-button {
   display: none;
 }
 
@@ -742,6 +743,16 @@ body.is-dragging-layer * {
   color: var(--text);
   font-weight: 500;
 }
+
+.shortcuts-help-button {
+  position: absolute;
+  top: 44px;
+  right: 12px;
+  z-index: 6;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
 .coordinates i {
   display: inline-block;
   width: 10px;
@@ -1218,6 +1229,10 @@ body.is-dragging-layer * {
   .coordinates,
   .resizer {
     display: none;
+  }
+  .shortcuts-help-button {
+    top: 56px;
+    right: 12px;
   }
   .toolbar {
     bottom: calc(10px + env(safe-area-inset-bottom, 0px));

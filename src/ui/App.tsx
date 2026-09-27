@@ -9,6 +9,7 @@ import { CanvasView } from './components/CanvasView';
 import { ColorPicker } from './components/ColorPicker';
 import { ColorAdjustPanel } from './components/ColorAdjustPanel';
 import { Coordinates } from './components/Coordinates';
+import { IconButton } from './components/IconButton';
 import { MenuHost } from './components/Menu';
 import { MobileBar } from './components/MobileBar';
 import { PanelResizer } from './components/PanelResizer';
@@ -22,7 +23,7 @@ import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useNotices } from './hooks/useNotices';
 import { LeftPanel } from './panels/LeftPanel';
 import { RightPanel } from './panels/RightPanel';
-import { PANEL_LIMITS, toast, uiStore, type UiState } from './uiStore';
+import { openDialog, PANEL_LIMITS, toast, uiStore, type UiState } from './uiStore';
 
 const editorLabels = () => ({
   layer: (n: number) => t('default.layer', { n }),
@@ -107,6 +108,14 @@ export function App({ editor, storage }: { editor: Editor; storage: StorageAdapt
             <PanelResizer side="right" />
             <MobileBar />
             <Coordinates />
+            <IconButton
+              className="icon-btn large shortcuts-help-button"
+              icon="help"
+              iconSize={20}
+              label={t('menu.shortcuts')}
+              shortcut="?"
+              onClick={() => openDialog({ type: 'shortcuts' })}
+            />
             <Toolbar />
           </main>
           <RightPanel />

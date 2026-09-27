@@ -4,6 +4,7 @@ import {
   ChevronDown,
   ChevronUp,
   Circle,
+  CircleQuestionMark,
   Copy,
   Droplets,
   Ellipsis,
@@ -82,6 +83,7 @@ export const ICONS = {
   panel: SlidersHorizontal,
   close: X,
   info: Info,
+  help: CircleQuestionMark,
   rotate: RotateCwSquare,
   // Lucide names these after the axis line: the vertical line mirrors left-right.
   flipH: FlipVertical2,
