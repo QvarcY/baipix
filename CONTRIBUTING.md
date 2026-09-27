@@ -19,7 +19,7 @@ The CI runs the same checks on every pull request.
 
 ## Picking something to work on
 
-Ideas and bugs are tracked in [issues](https://github.com/Todo-bai/baipix/issues). The ones labeled `good first issue` are small and a good way to start. Leave a comment on the issue when you pick it up, so two people don't end up doing the same thing.
+Ideas and bugs are tracked in [issues](https://github.com/baipix/baipix/issues). The ones labeled `good first issue` are small and a good way to start. Leave a comment on the issue when you pick it up, so two people don't end up doing the same thing.
 
 Put `Closes #123` in your commit message or pull request description: the issue closes on its own when the change lands.
 

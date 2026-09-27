@@ -36,7 +36,7 @@ jobs:
       - run: npm ci --prefix site
       - run: npm run build --prefix site
         env:
-          SITE_URL: https://todo-bai.github.io
+          SITE_URL: https://baipix.github.io
           BASE_PATH: /baipix/
       - run: cp -r dist site/dist/app
       - uses: actions/configure-pages@v5

@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 // Made for baipix.app. SITE_URL and BASE_PATH let it be served elsewhere meanwhile
-// (GitHub Pages: https://todo-bai.github.io + /baipix/).
+// (GitHub Pages: https://baipix.github.io + /baipix/).
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://baipix.app',
   base: process.env.BASE_PATH ?? '/',
