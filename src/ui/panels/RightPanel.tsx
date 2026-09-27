@@ -32,6 +32,7 @@ function TopBar() {
         className="zoom-button"
         aria-haspopup="menu"
         onClick={(e) => openMenu(e.currentTarget, zoomMenu(editor))}
+        onDoubleClick={() => viewport.fit(editor.getState().doc)}
       >
         {Math.round(zoom * 100)} %<span className="caret">▾</span>
       </button>
