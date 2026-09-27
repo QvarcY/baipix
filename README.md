@@ -2,7 +2,7 @@
 
 **A pixel art editor for designers, with the interface of a modern design tool.** Free, open source, runs in the browser, no account needed.
 
-**[Open the editor](https://todo-bai.github.io/baipix/app/)** · [Website](https://todo-bai.github.io/baipix/)
+**[Open the editor](https://baipix.github.io/baipix/app/)** · [Website](https://baipix.github.io/baipix/)
 
 ![Baipix](docs/screenshot.png)
 

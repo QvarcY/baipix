@@ -8,7 +8,7 @@ import { APP_URL, LICENSE_URL, REPO_URL } from '../links';
 
 const base = import.meta.env.BASE_URL;
 const STAR = ['...#...', '..###..', '#######', '.#####.', '..###..', '.##.##.', '.#...#.'];
-const clone = 'git clone https://github.com/Todo-bai/baipix.git\ncd baipix\nnpm install\nnpm run dev';
+const clone = 'git clone https://github.com/baipix/baipix.git\ncd baipix\nnpm install\nnpm run dev';
 
 const features = [
   {
@@ -160,7 +160,7 @@ const features = [
 
   <script>
     // Star count from the GitHub API; the button works without it.
-    fetch('https://api.github.com/repos/Todo-bai/baipix')
+    fetch('https://api.github.com/repos/baipix/baipix')
       .then((r) => (r.ok ? r.json() : null))
       .then((repo) => {
         const el = document.querySelector<HTMLElement>('[data-stars]');
